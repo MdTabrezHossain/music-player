@@ -82,11 +82,10 @@ nav span {
 }
 
 .songContainer {
-    justify-content: flex-start;
     flex-wrap: wrap;
     gap: 1.5em;
     border-bottom: 0.5px solid #ffffff;
-    transition: all ease-in-out 0.2s;
+    transition: all ease 0.2s;
 }
 
 .songCard {
@@ -94,7 +93,7 @@ nav span {
     font-size: 1rem;
     display: flex;
     flex-direction: column;
-    transition: all ease-in-out 0.2s;
+    transition: all ease 0.2s;
     position: relative;
     opacity: 0;
 }
