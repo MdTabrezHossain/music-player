@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'DM Sans';
+}
+
+
+@font-face {
+    font-display: swap;
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../Fonts/dm-sans-v15-latin/dm-sans-v15-latin-regular.woff2') format('woff2');
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #000000;
+}
+
+::-webkit-scrollbar {
+    background-color: #121212;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #5a5a5a;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.borderRad {
+    border-radius: 25px;
+}
+
+.boldFont {
+    font-weight: bold;
+}
+
+.pad1em {
+    padding: 1em;
+}
+
+.color12 {
+    background-color: #121212;
+}
+
+.whiteBgc {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.blackBgc {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.whiteTxt {
+    color: white;
+}
+
+.cursorPointer {
+    cursor: pointer;
+}
+
+.overflowYscroll {
+    overflow-y: scroll;
+}

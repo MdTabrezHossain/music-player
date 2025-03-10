@@ -1,0 +1,164 @@
+@import url(./Style.css);
+/* ---------------------------------------NAVBAR------------------------------------- */
+
+nav {
+    width: 100%;
+    padding: 0.7em;
+}
+
+nav span {
+    margin-left: 1em;
+}
+
+.logo span {
+    margin-left: 0.5em;
+}
+
+.searchBar {
+    width: 25%;
+    justify-content: center;
+    border-radius: 25px;
+}
+
+.searchBar input {
+    background-color: rgb(0, 0, 0, 0.01);
+    color: #ffffff;
+    width: 70%;
+    margin: 0 0.5em;
+    border: none;
+    outline: none;
+}
+
+.searchBar ::-webkit-input-placeholder {
+    color: #ffffff;
+}
+
+/* ---------------------------------------BODY------------------------------------- */
+
+.mainSection {
+    height: 87vh;
+    margin: 0.5em 0.8em 0 0.8em;
+    align-items: flex-start;
+}
+
+.leftSection {
+    width: 28%;
+    height: 100%;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.yourLibrary span {
+    margin-left: 0.5em;
+}
+
+.playlistCard {
+    margin-top: 0.5em;
+    overflow: hidden;
+}
+
+.playlistCard p {
+    margin-left: 1em;
+}
+
+.playlistCard img:last-child {
+    width: 7.5rem;
+    height: 7.5rem;
+    border-radius: 50%;
+}
+
+.rightSection {
+    height: 100%;
+    width: 71%;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.4rem;
+}
+
+.rightSection p {
+    margin: 0.8em;
+}
+
+.songContainer {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 1.5em;
+    border-bottom: 0.5px solid #ffffff;
+    transition: all ease-in-out 0.2s;
+}
+
+.songCard {
+    width: 22%;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    transition: all ease-in-out 0.2s;
+    position: relative;
+    opacity: 0;
+}
+
+.songCard span:last-child {
+    font-size: 0.7rem;
+}
+
+.songCard img:first-child {
+    width: 100%;
+    border-radius: 50%;
+    margin-bottom: 0.5em;
+}
+
+.songCard img:nth-child(2) {
+    position: absolute;
+    top: 55%;
+    left: 70%;
+    visibility: hidden;
+}
+
+.songCard:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.songCard:hover img:nth-child(2) {
+    visibility: visible;
+}
+
+.artistName {
+    font-size: 0.8rem;
+}
+
+.playerContainer {
+    position: absolute;
+    width: 65%;
+    height: 12%;
+    left: 32%;
+    top: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 1em;
+    background-color: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(10px);
+    font-size: 0.8rem;
+    border-radius: 10px;
+    visibility: hidden;
+    transition: all ease-in-out 0.2s;
+}
+
+.playerContainer:hover {
+    background-color: #000000;
+}
+
+.songNameContainer {
+    width: 25%;
+}
+
+.playerContainer i {
+    margin: 0 1em;
+}
+
+.timeLineBar {
+    width: 100%;
+    height: 10%;
+}
