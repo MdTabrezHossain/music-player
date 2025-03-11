@@ -22,14 +22,15 @@
             <i class="fa-solid fa-magnifying-glass"></i>
             <input class="pad1em " type="text" placeholder="What do you want to play?" id="searchInput">
             <i class="showAllSongsBtn fa-solid fa-box-archive" title="Show all songs" id="showAllSongsBtn"></i>
-            <i class="hamburgerBtn fa-solid fa-bars" id="hamburgerMenu"></i>
+            <i class="hamburgerBtn fa-solid fa-bars" id="hamburgerMenuBtn"></i>
         </div>
     </nav>
 
 
-    <!----------------------------------------------------MAIN SECTION------------------------------------------------------>
+    <!----------- MAIN SECTION ---------->
     <div class="mainSection flex borderRad whiteTxt">
-        <!-------------------------- LEFT SECTION--------------------------->
+
+        <!----------- LEFT SECTION ---------->
         <div class="leftSection borderRad color12" id="playlistSection">
             <div class="yourLibrary pad1em">
                 <i class="fa-solid fa-layer-group fa-xl"></i>
@@ -59,15 +60,16 @@
                 </div>
             </div>
         </div>
-        <!------------------------------------------------- RIGHT SECTION--------------------------------------------->
-        <div class="rightSection borderRad color12 pad1em" id="songsSections">
+
+        <!----------- RIGHT SECTION ---------->
+        <div class="rightSection borderRad color12 pad1em" id="songsSection">
             <p class="cursorPointer boldFont" id="playlistNameSpan">Select a Playlist from Library</p>
             <div class="songContainer flex overflowYscroll"></div>
             <audio id="currentSong" src=""></audio>
         </div>
     </div>
 
-    <!---------------------------- PLAY BAR -------------------------->
+    <!----------- PLAYBAR ---------->
     <div class=" playerContainer pad1em whiteTxt" id="playBar">
         <div class="flex">
             <div class="songNameContainer">
@@ -93,6 +95,18 @@
         </div>
         <div>
             <input type="range" value="0" class="timeLineBar" id="timeLineBar">
+        </div>
+    </div>
+
+    <!---------- HAMBURGER MENU ---------->
+    <div class="hamburgerMenuSection blackBgc whiteTxt" id="hamburgerMenuBSection">
+        <div class="hamMenuOptions flex color12" id="yourLibBtn">
+            <i class="fa-solid fa-layer-group fa"></i>
+            <p>Your Library</p>
+        </div>
+        <div class="hamMenuOptions flex color12" id="allSongsBtn">
+            <i class="fa-solid fa-box-archive"></i>
+            <p>All Songs</p>
         </div>
     </div>
 

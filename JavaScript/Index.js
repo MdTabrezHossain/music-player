@@ -45,3 +45,18 @@ document.querySelector("#closeSongBtn").addEventListener("dblclick", Song.closeS
 
 // search song when user types in the searchbar
 document.querySelector("#searchInput").addEventListener("keydown", Song.searchSongs);
+
+// display playlist section in mobile
+document.querySelector("#yourLibBtn").addEventListener("click", Playlist.showPlaylistInMobile);
+
+// display all songs in mobile
+document.querySelector("#allSongsBtn").addEventListener("click", Song.showAllSongs);
+
+document.querySelector("#hamburgerMenuBtn").addEventListener("click", () => {
+    document.querySelector("#hamburgerMenuBSection").style.display = "block";
+    setTimeout(() => {
+        document.querySelector("#hamburgerMenuBSection").style.opacity = 1;
+    })
+
+});
+

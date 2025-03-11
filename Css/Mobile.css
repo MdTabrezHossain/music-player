@@ -7,7 +7,6 @@
     
     .leftSection{
         width: 100%;
-        display: none;
     }
     
     .rightSection{
@@ -26,13 +25,26 @@
 
 @media (max-width:640px){
     .searchBar{
-        width: 80%;
+        width: 75%;
+    }
+
+    .showAllSongsBtn{
+        display: none;
+    }
+
+    .hamburgerBtn{
+        display:block;
     }
     
     .searchBar input{
         width: 75%;
     }
     
+    .leftSection{
+        display: none;
+        opacity: 0;
+    }
+
     .rightSection{
         width: 100%;
     }

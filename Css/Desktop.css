@@ -33,6 +33,9 @@ nav span {
     color: #ffffff;
 }
 
+.hamburgerBtn{
+    display: none;
+}
 /* ---------------------------------------BODY------------------------------------- */
 
 .mainSection {
@@ -48,6 +51,7 @@ nav span {
     display: flex;
     flex-direction: column;
     gap: 1em;
+    transition: all ease 0.3s;
 }
 
 .yourLibrary span {
@@ -142,7 +146,7 @@ nav span {
     font-size: 0.8rem;
     border-radius: 10px;
     visibility: hidden;
-    transition: all ease-in-out 0.2s;
+    transition: all ease 0.2s;
 }
 
 .playerContainer:hover {
@@ -160,4 +164,30 @@ nav span {
 .timeLineBar {
     width: 100%;
     height: 10%;
+}
+
+.hamburgerMenuSection{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 75%;
+    padding: 1em;
+    display: none;
+    opacity: 0;
+    transition: all ease 0.1s;
+}
+
+.hamMenuOptions{
+    width: 100%;
+    justify-content: flex-start;
+    gap: 1em;
+    padding: 1em;
+    margin-bottom: 1em;
+    border-radius: 10px;
+}
+
+.hamMenuOptions:hover{
+    background-color: #fff;
+    color: #000000;
 }

@@ -103,3 +103,13 @@ function handlePlaylistPlayBtnClick(event) {
     showPlaylist(selectedPlaylist, selectedPlaylistName);
     setTimeout(Song.activateSongPlayBtns, 500);
 }
+
+// function to display hamburger menu in mobile
+export function showPlaylistInMobile() {
+    document.querySelector("#playlistSection").style.display = "block";
+    setTimeout(() => {
+        document.querySelector("#playlistSection").style.opacity = 1;
+    });
+
+    document.querySelector("#songsSection").style.display = "none";
+}
