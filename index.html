@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="icon" type="image/x-icon" href="../Icons/icons8-spotify-120.png">
+    <link rel="stylesheet" href="../Css/FontAwesome/all.min.css">
+    <link rel="stylesheet" href="../Css/FontAwesome/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./Css/Mobile.css">
+</head>
+
+<body>
+    <!------------------ NAVIGATION BAR ----------------->
+    <nav class="flex blackBgc">
+        <span class="boldFont">Music Player</span>
+        <div class="searchBar flex color12 cursorPointer">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input class="pad1em " type="text" placeholder="What do you want to play?" id="searchInput">
+            <i class="showAllSongsBtn fa-solid fa-box-archive" title="Show all songs" id="showAllSongsBtn"></i>
+            <i class="hamburgerBtn fa-solid fa-bars" id="hamburgerMenu"></i>
+        </div>
+    </nav>
+
+
+    <!----------------------------------------------------MAIN SECTION------------------------------------------------------>
+    <div class="mainSection flex borderRad whiteTxt">
+        <!-------------------------- LEFT SECTION--------------------------->
+        <div class="leftSection borderRad color12" id="playlistSection">
+            <div class="yourLibrary pad1em">
+                <i class="fa-solid fa-layer-group fa-xl"></i>
+                <span class="boldFont">Your Library</span>
+            </div>
+            <div class="overflowYscroll">
+                <div class="playlistCard flex borderRad blackBgc pad1em">
+                    <div class="flex">
+                        <img src=" ../Icons/icons8-circled-play-48.png" class="cursorPointer" id="playBtnPlaylist1">
+                        <p>NEFFEX</p>
+                    </div>
+                    <img src="https://th.bing.com/th/id/OIP.rS2iH_lIHEMqHWuIL-_oWwAAAA?w=157&h=186&c=7&r=0&o=5&pid=1.7">
+                </div>
+                <div class="playlistCard flex borderRad blackBgc pad1em">
+                    <div class="flex">
+                        <img src="../Icons/icons8-circled-play-48.png" class="cursorPointer" id="playBtnPlaylist2">
+                        <p>Shubh</p>
+                    </div>
+                    <img src="https://i.scdn.co/image/ab6761610000e5eb8f553f96d564d1005a92d131">
+                </div>
+                <div class="playlistCard flex borderRad blackBgc pad1em">
+                    <div class="flex">
+                        <img src="../Icons/icons8-circled-play-48.png" class="cursorPointer" id="playBtnPlaylist3">
+                        <p>Anuv Jain</p>
+                    </div>
+                    <img src="https://c.saavncdn.com/artists/Anuv_Jain_000_20230704095847_500x500.jpg">
+                </div>
+            </div>
+        </div>
+        <!------------------------------------------------- RIGHT SECTION--------------------------------------------->
+        <div class="rightSection borderRad color12 pad1em" id="songsSections">
+            <p class="cursorPointer boldFont" id="playlistNameSpan">Select a Playlist from Library</p>
+            <div class="songContainer flex overflowYscroll"></div>
+            <audio id="currentSong" src=""></audio>
+        </div>
+    </div>
+
+    <!---------------------------- PLAY BAR -------------------------->
+    <div class=" playerContainer pad1em whiteTxt" id="playBar">
+        <div class="flex">
+            <div class="songNameContainer">
+                <marquee id="currentSongName" scrolldelay="100">Select a song </marquee>
+            </div>
+            <div class="playerButtonsContainer">
+                <i class="fa-solid fa-backward-step fa-xl" id="prevBtn"></i>
+                <i class="fa-solid fa-circle-play fa-2xl" id="songPlayBtn"></i>
+                <i class="fa-solid fa-forward-step fa-xl" id="nextBtn"></i>
+            </div>
+            <div class="timeLineContainer flex">
+                <div>
+                    <span id="durationPlayed">00:00</span>
+                    <span>/</span>
+                    <span id="songDuration">00:00</span>
+                </div>
+                <div class="volumeBarContainer flex ">
+                    <i class="fa-solid fa-volume-high" id="volBtn"></i>
+                    <input type="range" value="0.3" min="0" max="1" step="0.01" id="volumeBar">
+                </div>
+                <i class="fa-solid fa-circle-xmark" title="Close" id="closeSongBtn"></i>
+            </div>
+        </div>
+        <div>
+            <input type="range" value="0" class="timeLineBar" id="timeLineBar">
+        </div>
+    </div>
+
+    <script type="module" src="../JavaScript/Index.js"></script>
+</body>
+
+</html>
