@@ -1,4 +1,5 @@
 import * as Data from "./Data.js";
+import { hideHamburgerMenu } from "./Index.js";
 import * as Playlist from "./Playlist.js";
 
 export const songPlayBtn = document.querySelector("#songPlayBtn");
@@ -209,4 +210,18 @@ export function searchSongs(event) {
             setTimeout(activateSongPlayBtns, 1000);
         }
     }, 0);
+}
+
+// function to handle showAllSongs() according to device
+export function handleShowAllSongs() {
+    if (window.innerWidth <= 640) {
+        hideHamburgerMenu();
+        document.querySelector("#playlistSection").style.display = "none";
+        document.querySelector("#playlistSection").style.opacity = 0;
+        document.querySelector("#songsSection").style.display = "flex";
+        document.querySelector("#songsSection").style.opacity = 1;
+        showAllSongs();
+        return;
+    }
+    showAllSongs();
 }

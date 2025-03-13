@@ -106,10 +106,13 @@ function handlePlaylistPlayBtnClick(event) {
 
 // function to display hamburger menu in mobile
 export function showPlaylistInMobile() {
+    document.querySelector("#hamburgerMenuSection").style.display = "none";
     document.querySelector("#playlistSection").style.display = "block";
     setTimeout(() => {
         document.querySelector("#playlistSection").style.opacity = 1;
     });
 
     document.querySelector("#songsSection").style.display = "none";
+    document.querySelector("#songsSection").style.opacity = 0;
+
 }

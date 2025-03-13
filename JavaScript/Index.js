@@ -1,12 +1,27 @@
 import * as Playlist from "./Playlist.js";
 import * as Song from "./Song.js";
 
+// function to display hamburger menu
+export function showHamburgerMenu() {
+    document.querySelector("#hamburgerMenuSection").style.display = "block";
+    setTimeout(() => {
+        document.querySelector("#hamburgerMenuSection").style.opacity = 1;
+    });
+}
+
+// function to hide hamburger menu
+export function hideHamburgerMenu() {
+    document.querySelector("#hamburgerMenuSection").style.opacity = 0;
+    setTimeout(() => {
+        document.querySelector("#hamburgerMenuSection").style.display = "none";
+    }, 200);
+}
 
 //activate the playlist play button once the html loads
 document.addEventListener("DOMContentLoaded", Playlist.activatePlaylistPlayBtns);
 
 // show all songs when box icon of the navigation bar is clicked
-document.querySelector("#showAllSongsBtn").addEventListener("click", Song.showAllSongs);
+document.querySelector("#showAllSongsBtn").addEventListener("click", Song.handleShowAllSongs);
 
 // play the song
 Song.songPlayBtn.addEventListener("click", Song.playPauseSong);
@@ -46,17 +61,12 @@ document.querySelector("#closeSongBtn").addEventListener("dblclick", Song.closeS
 // search song when user types in the searchbar
 document.querySelector("#searchInput").addEventListener("keydown", Song.searchSongs);
 
+
+// display the hamburger menu
+document.querySelector("#hamburgerMenuBtn").addEventListener("click", showHamburgerMenu);
+
 // display playlist section in mobile
 document.querySelector("#yourLibBtn").addEventListener("click", Playlist.showPlaylistInMobile);
 
-// display all songs in mobile
-document.querySelector("#allSongsBtn").addEventListener("click", Song.showAllSongs);
-
-document.querySelector("#hamburgerMenuBtn").addEventListener("click", () => {
-    document.querySelector("#hamburgerMenuBSection").style.display = "block";
-    setTimeout(() => {
-        document.querySelector("#hamburgerMenuBSection").style.opacity = 1;
-    })
-
-});
-
+// show all songs in mobile
+document.querySelector("#allSongsBtn").addEventListener("click", Song.handleShowAllSongs);
