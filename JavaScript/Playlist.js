@@ -1,12 +1,16 @@
 import * as Data from "./Data.js";
 import * as Song from "./Song.js";
 
-const songContainer = document.querySelector(".songContainer");
-let playlistNameSpan = document.querySelector("#playlistNameSpan");
-
 export let selectedPlaylist = [];
 export let selectedPlaylistNumber = 0;
 export let selectedPlaylistName = "";
+
+const songContainer = document.querySelector(".songContainer");
+let playlistNameSpan = document.querySelector("#playlistNameSpan");
+const yourLibrary = document.querySelector("#playlistSection");
+const songsSection = document.querySelector("#songsSection");
+
+
 
 
 export function setSelectedPlaylistName(name) {
@@ -32,6 +36,12 @@ export function activatePlaylistPlayBtns() {
 
 //function to show the playlist songs on the screen
 export function showPlaylist(playlist, name) {
+    if (window.innerWidth <= 640) {
+        yourLibrary.style.display = "none";
+        songsSection.style.display = "flex";
+        songsSection.style.opacity = 1;
+
+    }
     playlistNameSpan.textContent = name;
     songContainer.innerHTML = "";
     createSongCards(playlist);
@@ -65,21 +75,25 @@ function createSongCards(playlist) {
 
 // function to show playlist songs on mouse over
 function handlePlaylistPlayBtnMouseOver(event) {
-    let playlistPlayBtnId = event.target.id;
-    let playlistNumber = Number(playlistPlayBtnId.slice(-1))
-    let playlist = Data.playlists[playlistNumber - 1];
-    let playlistName = Data.playlistsNames[playlistNumber - 1];
-    showPlaylist(playlist, playlistName);
+    if (window.innerWidth > 640) {
+        let playlistPlayBtnId = event.target.id;
+        let playlistNumber = Number(playlistPlayBtnId.slice(-1))
+        let playlist = Data.playlists[playlistNumber - 1];
+        let playlistName = Data.playlistsNames[playlistNumber - 1];
+        showPlaylist(playlist, playlistName);
+    }
 }
 
 
 // function to remove the playlist songs from the screen mouse out
 function handlePlaylistPlayBtnMouseOut() {
-    clearPlaylist();
-    if (selectedPlaylist) {
-        // console.log(selectedPlaylist);
-        showPlaylist(selectedPlaylist, selectedPlaylistName);
-        setTimeout(Song.activateSongPlayBtns, 500);
+    if (window.innerWidth > 640) {
+        clearPlaylist();
+        if (selectedPlaylist) {
+            // console.log(selectedPlaylist);
+            showPlaylist(selectedPlaylist, selectedPlaylistName);
+            setTimeout(Song.activateSongPlayBtns, 500);
+        }
     }
 }
 
@@ -105,14 +119,14 @@ function handlePlaylistPlayBtnClick(event) {
 }
 
 // function to display hamburger menu in mobile
-export function showPlaylistInMobile() {
+export function showPlaylistsInMobile() {
     document.querySelector("#hamburgerMenuSection").style.display = "none";
-    document.querySelector("#playlistSection").style.display = "block";
+    yourLibrary.style.display = "block";
     setTimeout(() => {
-        document.querySelector("#playlistSection").style.opacity = 1;
+        yourLibrary.style.opacity = 1;
     });
 
-    document.querySelector("#songsSection").style.display = "none";
-    document.querySelector("#songsSection").style.opacity = 0;
+    songsSection.style.display = "none";
+    songsSection.style.opacity = 0;
 
 }

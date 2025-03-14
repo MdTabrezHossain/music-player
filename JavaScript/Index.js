@@ -78,7 +78,7 @@ document.addEventListener("click", function (event) {
 hamMenuBtn.addEventListener("click", showHamburgerMenu);
 
 // display playlist section in mobile
-document.querySelector("#yourLibBtn").addEventListener("click", Playlist.showPlaylistInMobile);
+document.querySelector("#yourLibBtn").addEventListener("click", Playlist.showPlaylistsInMobile);
 
 // show all songs in mobile
 document.querySelector("#allSongsBtn").addEventListener("click", Song.handleShowAllSongs);
