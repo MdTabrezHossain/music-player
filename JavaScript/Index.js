@@ -1,19 +1,22 @@
 import * as Playlist from "./Playlist.js";
 import * as Song from "./Song.js";
 
+const hamMenu = document.querySelector("#hamburgerMenuSection");
+const hamMenuBtn = document.querySelector("#hamburgerMenuBtn");
+
 // function to display hamburger menu
 export function showHamburgerMenu() {
-    document.querySelector("#hamburgerMenuSection").style.display = "block";
+    hamMenu.style.display = "block";
     setTimeout(() => {
-        document.querySelector("#hamburgerMenuSection").style.opacity = 1;
+        hamMenu.style.opacity = 1;
     });
 }
 
 // function to hide hamburger menu
 export function hideHamburgerMenu() {
-    document.querySelector("#hamburgerMenuSection").style.opacity = 0;
+    hamMenu.style.opacity = 0;
     setTimeout(() => {
-        document.querySelector("#hamburgerMenuSection").style.display = "none";
+        hamMenu.style.display = "none";
     }, 200);
 }
 
@@ -61,12 +64,22 @@ document.querySelector("#closeSongBtn").addEventListener("dblclick", Song.closeS
 // search song when user types in the searchbar
 document.querySelector("#searchInput").addEventListener("keydown", Song.searchSongs);
 
+// hide the ham menu if clicked outside it
+document.addEventListener("click", function (event) {
+    const clickedElement = event.target;
+
+    // if the menu does NOT contains the clicked element AND the clicked element is NOT the menu button. Then hide the menu
+    if (!hamMenu.contains(clickedElement) && !hamMenuBtn.contains(clickedElement)) {
+        hamMenu.style.display = "none";
+    }
+});
 
 // display the hamburger menu
-document.querySelector("#hamburgerMenuBtn").addEventListener("click", showHamburgerMenu);
+hamMenuBtn.addEventListener("click", showHamburgerMenu);
 
 // display playlist section in mobile
 document.querySelector("#yourLibBtn").addEventListener("click", Playlist.showPlaylistInMobile);
 
 // show all songs in mobile
 document.querySelector("#allSongsBtn").addEventListener("click", Song.handleShowAllSongs);
+
