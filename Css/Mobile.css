@@ -58,15 +58,17 @@
     .songCard{
         width: 50%;
     }
-    
     .playerContainer{
-        width: 100%;
-        left: 0;
+        height: 15%;
     }
-    .songNameContainer {
-        width: 20%;
+    
+    .playerButtonsContainer{
+        display: flex;
     }
+
     .volumeBarContainer{
-        display: none;
+        display:none;
     }
 }
+    
+
